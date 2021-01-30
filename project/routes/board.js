@@ -1,11 +1,7 @@
 const express = require('express');
 const {connect} = require('../model');
-//const { post } = require('./users');
 
 const router = express.Router();
-
-
-
 
 router.post('/create', (req, res, next) => { // Create
   const client = connect();
