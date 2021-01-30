@@ -9,5 +9,5 @@ router.get('/', (req, res, next) => {
   const client = connect();
   res.render('index');
 });
-d
+
 module.exports = router;
