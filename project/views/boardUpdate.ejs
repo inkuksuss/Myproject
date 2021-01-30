@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      
+    <title>게시판 수정</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+<body>
+<h3>게시판 수정</h3>
+<tr>
+    <td><%= post.title %></td>
+    <td><%= post.description %></td>
+    <td><%= post.createdDate %></td>
+<tr>
+<hr>
+<form action="/board/update_process" method="post">
+  <table>
+      <tr>
+          <td>제목 : </td>
+          <td><input type="text" name="title"></td>
+      </tr>
+      <tr>
+          <td>내용 : </td>
+          <td><input type="text" name="description"></td>
+      </tr>
+      <tr>
+          <td>
+             <input type="submit" value="수정완료"></input>
+             <input type = "hidden" name = "id" value = "<%=post.id%>"></input>
+          </td>
+      </tr>
+  </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      
+    <title>게시판</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+<body>
+<h3>게시판</h3>
+<form action="/board/create" method="post">
+  <table>
+      <tr>
+          <td>제목 : </td>
+          <td><input type="text" name="title"></td>
+      </tr>
+      <tr>
+          <td>내용 : </td>
+          <td><input type="text" name="description"></td>
+      </tr>
+      <tr>
+          <td><input type="submit" value="작성완료"></td>
+      </tr>
+  </table>
+  <table>
+      <tr>
+          <td>제목</td>
+          <td>내용</td>
+          <td>작성일</td>
+      </tr>
+      <% for(let i = 0; i < posts.length; i++) { %>
+          <tr>
+              <td><%= posts[i].title %></td>
+              <td><%= posts[i].description %></td>
+              <td><%= posts[i].createdDate %></td>
+              <td><button ><a href="/board/update/<%=posts[i].id%>">수정하기</a></button></td>
+              <td>
+              <form action="/board/delete" method="post">
+                  <input type = "hidden" name = "id" value = "<%=posts[i].id%>"></input>
+                  <input type="submit" value="삭제하기"></input>
+              </form>
+              </td>>
+          </tr>
+      <% } %>
+  </table>
+</form>
+</body>
+</html>
+<!--/<%=posts.id%>?_method=DELETE"-->
